@@ -12,15 +12,9 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver  android:name="com.example.sendmsgbypost.MyReceiver">
-            <intent-filter >
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
-            </intent-filter>
-        </receiver>
     </application>
 
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
