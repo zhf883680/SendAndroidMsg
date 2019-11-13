@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -46,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
     public  void SetShowContent(String content){
         TextView t1 = (TextView)findViewById(R.id.text_view);
+        t1.setMovementMethod(new ScrollingMovementMethod());
         SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间
         sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();// 获取当前时间
         //将日志输出到app主页
-       t1.append(sdf.format(date) +content+"\n");
+       t1.append(sdf.format(date) +"   "+content+"\n");
     }
     private BroadcastReceiver mBatInfoReveiver = new BroadcastReceiver() {
         @Override
